@@ -1,8 +1,18 @@
 import { StructuredToolInterface } from '@langchain/core/tools';
-import { createFinancialSearch, createFinancialMetrics } from './finance/index.js';
+import { createFinancialSearch, createFinancialMetrics, getFinancialScreener } from './finance/index.js';
+import { narrativeShockCorpus } from './narrative/index.js';
+import { brsMdsPipeline, brsMdsScore } from './scoring/index.js';
 import { exaSearch, tavilySearch } from './search/index.js';
 import { skillTool, SKILL_TOOL_DESCRIPTION } from './skill.js';
-import { FINANCIAL_SEARCH_DESCRIPTION, FINANCIAL_METRICS_DESCRIPTION, WEB_SEARCH_DESCRIPTION } from './descriptions/index.js';
+import {
+  FINANCIAL_SEARCH_DESCRIPTION,
+  FINANCIAL_METRICS_DESCRIPTION,
+  FINANCIAL_SCREENER_DESCRIPTION,
+  NARRATIVE_SHOCK_CORPUS_DESCRIPTION,
+  BRS_MDS_SCORE_DESCRIPTION,
+  BRS_MDS_PIPELINE_DESCRIPTION,
+  WEB_SEARCH_DESCRIPTION,
+} from './descriptions/index.js';
 import { discoverSkills } from '../skills/index.js';
 
 /**
@@ -35,6 +45,26 @@ export function getToolRegistry(model: string): RegisteredTool[] {
       name: 'financial_metrics',
       tool: createFinancialMetrics(model),
       description: FINANCIAL_METRICS_DESCRIPTION,
+    },
+    {
+      name: 'get_financial_screener',
+      tool: getFinancialScreener,
+      description: FINANCIAL_SCREENER_DESCRIPTION,
+    },
+    {
+      name: 'narrative_shock_corpus',
+      tool: narrativeShockCorpus,
+      description: NARRATIVE_SHOCK_CORPUS_DESCRIPTION,
+    },
+    {
+      name: 'brs_mds_score',
+      tool: brsMdsScore,
+      description: BRS_MDS_SCORE_DESCRIPTION,
+    },
+    {
+      name: 'brs_mds_pipeline',
+      tool: brsMdsPipeline,
+      description: BRS_MDS_PIPELINE_DESCRIPTION,
     },
   ];
 

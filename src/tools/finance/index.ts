@@ -8,6 +8,6 @@ export { getSegmentedRevenues } from './segments.js';
 export { getCryptoPriceSnapshot, getCryptoPrices, getCryptoTickers } from './crypto.js';
 export { getInsiderTrades } from './insider_trades.js';
 export { getCompanyFacts } from './company_facts.js';
+export { getFinancialScreener } from './screener.js';
 export { createFinancialSearch } from './financial-search.js';
 export { createFinancialMetrics } from './financial-metrics.js';
-
