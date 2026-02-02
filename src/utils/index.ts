@@ -17,3 +17,27 @@ export type { CursorContext } from './input-key-handlers.js';
 export { getToolDescription } from './tool-description.js';
 export { transformMarkdownTables, formatResponse } from './markdown-table.js';
 export { estimateTokens, TOKEN_BUDGET } from './tokens.js';
+export { computeBrs, DEFAULT_BRS_CONFIG } from './brs.js';
+export type {
+  BrsInputs,
+  BrsResult,
+  BrsConfig,
+  IncomeStatement,
+  BalanceSheet,
+  CashFlowStatement,
+  MetricsPoint,
+  UniverseMetric,
+  CompanyFacts,
+} from './brs.js';
+export { computeMds, computeMdsFromSeries, DEFAULT_MDS_CONFIG } from './mds.js';
+export type {
+  MdsInputs,
+  MdsResult,
+  MdsSeriesInputs,
+  MdsSeriesResult,
+  MdsConfig,
+  EstimatePoint,
+  OwnershipPoint,
+  InsiderTrade,
+} from './mds.js';
+export type { NarrativeDoc, NarrativeShockParams, NarrativeShockResult } from './narrative-shock.js';
