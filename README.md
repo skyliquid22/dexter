@@ -1,4 +1,4 @@
-# Dexter 🤖
+# Dexter 🤖 (Extra Tools and Workflows)
 
 Dexter is an autonomous financial research agent that thinks, plans, and learns as it works. It performs analysis using task planning, self-reflection, and real-time market data. Think Claude Code, but built specifically for financial research.
 
@@ -10,6 +10,7 @@ Dexter is an autonomous financial research agent that thinks, plans, and learns 
 - [✅ Prerequisites](#-prerequisites)
 - [💻 How to Install](#-how-to-install)
 - [🚀 How to Run](#-how-to-run)
+- [🧰 New Tools & Workflows](#-new-tools--workflows)
 - [📊 How to Evaluate](#-how-to-evaluate)
 - [🐛 How to Debug](#-how-to-debug)
 - [🤝 How to Contribute](#-how-to-contribute)
@@ -26,6 +27,7 @@ Dexter takes complex financial questions and turns them into clear, step-by-step
 - **Self-Validation**: Checks its own work and iterates until tasks are complete
 - **Real-Time Financial Data**: Access to income statements, balance sheets, and cash flow statements
 - **Safety Features**: Built-in loop detection and step limits to prevent runaway execution
+- **Lower Token Cost**: Improved context handling to reduce max-token errors and overall usage cost
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/virattt?style=social)](https://twitter.com/virattt)
 
@@ -105,6 +107,59 @@ Or with watch mode for development:
 ```bash
 bun dev
 ```
+
+## 🧰 New Tools & Workflows
+
+Dexter now includes a richer toolset for **screening**, **narrative shock analysis**, and **BRS/MDS scoring**.
+
+### 1) Financial Screener (universe builder)
+**Tool:** `get_financial_screener`  
+**What it does:** Runs metric filters (e.g., EV/EBITDA, EBITDA growth) and returns tickers only.  
+**Caching:** Results cached for 12 hours.
+
+**Example:**
+```
+Run get_financial_screener with filters=[{"field":"ev_ebitda_ratio","operator":"lt","value":15},{"field":"ebitda","operator":"gt","value":0},{"field":"ebitda_growth","operator":"gt","value":0.04},{"field":"earnings_per_share_diluted","operator":"gt","value":0}] limit=100 use_cache=true.
+```
+
+### 2) Narrative Shock Corpus
+**Tool:** `narrative_shock_corpus`  
+**What it does:** Builds a text corpus from **news + SEC filings** and runs a deterministic shock classifier.  
+**Default:** `classify=true` and **writes output to disk** under `.dexter/outputs/`.
+
+**Example:**
+```
+Run narrative_shock_corpus with ticker=AAPL, window_days=30, include_news=true, include_news_body=true, include_filings=true, filing_type=8-K, require_relevance=true.
+```
+
+**Output includes:**
+- `docs` (normalized news/filings text)
+- `classification` (shock_type, severity, structural risk, points)
+- `output_path` (saved JSON)
+
+### 3) BRS + MDS Pipeline (full scoring)
+**Tool:** `brs_mds_pipeline`  
+**What it does:** Pulls statements/metrics, optional estimates/ownership/insiders, narrative corpus, then computes **BRS + MDS**.  
+**Limit:** up to **10 tickers per call**.  
+**Outputs:** JSON results + summary ASCII table saved to `.dexter/outputs/`.
+
+**Example (10 tickers max):**
+```
+Run brs_mds_pipeline with tickers=[ACN,ALL,AMGN,AMZN,AVGO,AXP,AZN,BAC,BN,BP], lookback_years=5, include_estimates=true, include_ownership=true, include_insider_trades=true, use_yfinance_short_interest=true, narrative={"window_days":30,"include_news":true,"include_news_body":true,"include_filings":true,"filing_type":"8-K","require_relevance":true}.
+```
+
+### 4) BRS + MDS from pre-fetched payload
+**Tool:** `brs_mds_score`  
+**What it does:** Computes BRS + MDS **without** hitting APIs (expects a pre-fetched payload).
+
+**Example:**
+```
+Run brs_mds_score with tickers=[AAPL,MSFT] and payload=<pre-fetched data>.
+```
+
+### 5) Financial Metrics (model-routed)
+**Tool:** `financial_metrics`  
+**What it does:** A routed tool for the metrics endpoints (snapshot + history).
 
 ## 📊 How to Evaluate
 
