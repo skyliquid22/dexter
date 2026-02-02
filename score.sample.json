@@ -1,0 +1,133 @@
+{
+  "config": {
+    "brs": {
+      "min_peers": 3
+    },
+    "mds": {
+      "history_short": 8,
+      "history_long": 8,
+      "history_min": 4
+    }
+  },
+  "brs": {
+    "ticker": "ACME",
+    "company_facts": [
+      { "ticker": "ACME", "sector": "Technology", "industry": "Software" }
+    ],
+    "income_statements": [
+      { "report_period": "2022-03-31", "revenue": 900, "gross_profit": 630, "ebit": 180, "interest_expense": 10 },
+      { "report_period": "2022-06-30", "revenue": 940, "gross_profit": 658, "ebit": 190, "interest_expense": 10 },
+      { "report_period": "2022-09-30", "revenue": 980, "gross_profit": 686, "ebit": 200, "interest_expense": 11 },
+      { "report_period": "2022-12-31", "revenue": 1020, "gross_profit": 714, "ebit": 210, "interest_expense": 11 },
+      { "report_period": "2023-03-31", "revenue": 1060, "gross_profit": 742, "ebit": 220, "interest_expense": 12 },
+      { "report_period": "2023-06-30", "revenue": 1100, "gross_profit": 770, "ebit": 230, "interest_expense": 12 },
+      { "report_period": "2023-09-30", "revenue": 1140, "gross_profit": 798, "ebit": 240, "interest_expense": 13 },
+      { "report_period": "2023-12-31", "revenue": 1180, "gross_profit": 826, "ebit": 250, "interest_expense": 13 }
+    ],
+    "balance_sheets": [
+      { "report_period": "2023-12-31", "total_debt": 1200, "cash_and_equivalents": 400 }
+    ],
+    "cash_flow_statements": [
+      { "report_period": "2022-03-31", "depreciation_and_amortization": 40, "net_cash_flow_from_operations": 190, "free_cash_flow": 150, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2022-06-30", "depreciation_and_amortization": 41, "net_cash_flow_from_operations": 195, "free_cash_flow": 155, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2022-09-30", "depreciation_and_amortization": 42, "net_cash_flow_from_operations": 200, "free_cash_flow": 160, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2022-12-31", "depreciation_and_amortization": 43, "net_cash_flow_from_operations": 205, "free_cash_flow": 165, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2023-03-31", "depreciation_and_amortization": 44, "net_cash_flow_from_operations": 210, "free_cash_flow": 170, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2023-06-30", "depreciation_and_amortization": 45, "net_cash_flow_from_operations": 215, "free_cash_flow": 175, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2023-09-30", "depreciation_and_amortization": 46, "net_cash_flow_from_operations": 220, "free_cash_flow": 180, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 },
+      { "report_period": "2023-12-31", "depreciation_and_amortization": 47, "net_cash_flow_from_operations": 225, "free_cash_flow": 185, "capital_expenditure": -40, "dividends_and_other_cash_distributions": -10, "issuance_or_purchase_of_equity_shares": -40, "share_based_compensation": 20 }
+    ],
+    "metrics_history": [
+      { "report_period": "2022-03-31", "enterprise_value_to_ebitda_ratio": 14.5, "free_cash_flow_yield": 0.06, "return_on_invested_capital": 0.18, "interest_coverage": 12, "market_cap": 10000, "enterprise_value": 11000 },
+      { "report_period": "2022-06-30", "enterprise_value_to_ebitda_ratio": 14.0, "free_cash_flow_yield": 0.06, "return_on_invested_capital": 0.18, "interest_coverage": 12, "market_cap": 10200, "enterprise_value": 11200 },
+      { "report_period": "2022-09-30", "enterprise_value_to_ebitda_ratio": 13.8, "free_cash_flow_yield": 0.065, "return_on_invested_capital": 0.19, "interest_coverage": 12, "market_cap": 10400, "enterprise_value": 11400 },
+      { "report_period": "2022-12-31", "enterprise_value_to_ebitda_ratio": 13.6, "free_cash_flow_yield": 0.065, "return_on_invested_capital": 0.19, "interest_coverage": 13, "market_cap": 10600, "enterprise_value": 11600 },
+      { "report_period": "2023-03-31", "enterprise_value_to_ebitda_ratio": 13.2, "free_cash_flow_yield": 0.07, "return_on_invested_capital": 0.20, "interest_coverage": 13, "market_cap": 10800, "enterprise_value": 11800 },
+      { "report_period": "2023-06-30", "enterprise_value_to_ebitda_ratio": 13.0, "free_cash_flow_yield": 0.07, "return_on_invested_capital": 0.20, "interest_coverage": 13, "market_cap": 11000, "enterprise_value": 12000 },
+      { "report_period": "2023-09-30", "enterprise_value_to_ebitda_ratio": 12.6, "free_cash_flow_yield": 0.075, "return_on_invested_capital": 0.21, "interest_coverage": 14, "market_cap": 11200, "enterprise_value": 12200 },
+      { "report_period": "2023-12-31", "enterprise_value_to_ebitda_ratio": 12.4, "free_cash_flow_yield": 0.08, "return_on_invested_capital": 0.21, "interest_coverage": 14, "market_cap": 11400, "enterprise_value": 12400 }
+    ],
+    "universe_metrics": [
+      {
+        "ticker": "ACME",
+        "sector": "Technology",
+        "industry": "Software",
+        "ev_to_ebitda": 12.4,
+        "roic_series": [
+          { "report_period": "2023-06-30", "value": 0.19 },
+          { "report_period": "2023-09-30", "value": 0.20 },
+          { "report_period": "2023-12-31", "value": 0.21 }
+        ]
+      },
+      {
+        "ticker": "PEER1",
+        "sector": "Technology",
+        "industry": "Software",
+        "ev_to_ebitda": 15.0,
+        "roic_series": [
+          { "report_period": "2023-06-30", "value": 0.16 },
+          { "report_period": "2023-09-30", "value": 0.17 },
+          { "report_period": "2023-12-31", "value": 0.17 }
+        ]
+      },
+      {
+        "ticker": "PEER2",
+        "sector": "Technology",
+        "industry": "Software",
+        "ev_to_ebitda": 18.0,
+        "roic_series": [
+          { "report_period": "2023-06-30", "value": 0.14 },
+          { "report_period": "2023-09-30", "value": 0.15 },
+          { "report_period": "2023-12-31", "value": 0.15 }
+        ]
+      }
+    ]
+  },
+  "mds": {
+    "ticker": "ACME",
+    "metrics_history": [
+      { "report_period": "2022-03-31", "enterprise_value_to_ebitda_ratio": 14.5, "free_cash_flow_yield": 0.06, "market_cap": 10000, "enterprise_value": 11000 },
+      { "report_period": "2022-06-30", "enterprise_value_to_ebitda_ratio": 14.0, "free_cash_flow_yield": 0.06, "market_cap": 10200, "enterprise_value": 11200 },
+      { "report_period": "2022-09-30", "enterprise_value_to_ebitda_ratio": 13.8, "free_cash_flow_yield": 0.065, "market_cap": 10400, "enterprise_value": 11400 },
+      { "report_period": "2022-12-31", "enterprise_value_to_ebitda_ratio": 13.6, "free_cash_flow_yield": 0.065, "market_cap": 10600, "enterprise_value": 11600 },
+      { "report_period": "2023-03-31", "enterprise_value_to_ebitda_ratio": 13.2, "free_cash_flow_yield": 0.07, "market_cap": 10800, "enterprise_value": 11800 },
+      { "report_period": "2023-06-30", "enterprise_value_to_ebitda_ratio": 13.0, "free_cash_flow_yield": 0.07, "market_cap": 11000, "enterprise_value": 12000 },
+      { "report_period": "2023-09-30", "enterprise_value_to_ebitda_ratio": 12.6, "free_cash_flow_yield": 0.075, "market_cap": 11200, "enterprise_value": 12200 },
+      { "report_period": "2023-12-31", "enterprise_value_to_ebitda_ratio": 12.4, "free_cash_flow_yield": 0.08, "market_cap": 11400, "enterprise_value": 12400 }
+    ],
+    "income_statements": [
+      { "report_period": "2022-03-31", "revenue": 900, "gross_profit": 630, "ebit": 180 },
+      { "report_period": "2022-06-30", "revenue": 940, "gross_profit": 658, "ebit": 190 },
+      { "report_period": "2022-09-30", "revenue": 980, "gross_profit": 686, "ebit": 200 },
+      { "report_period": "2022-12-31", "revenue": 1020, "gross_profit": 714, "ebit": 210 },
+      { "report_period": "2023-03-31", "revenue": 1060, "gross_profit": 742, "ebit": 220 },
+      { "report_period": "2023-06-30", "revenue": 1100, "gross_profit": 770, "ebit": 230 },
+      { "report_period": "2023-09-30", "revenue": 1140, "gross_profit": 798, "ebit": 240 },
+      { "report_period": "2023-12-31", "revenue": 1180, "gross_profit": 826, "ebit": 250 }
+    ],
+    "cash_flow_statements": [
+      { "report_period": "2022-03-31", "depreciation_and_amortization": 40, "net_cash_flow_from_operations": 190, "free_cash_flow": 150, "capital_expenditure": -40 },
+      { "report_period": "2022-06-30", "depreciation_and_amortization": 41, "net_cash_flow_from_operations": 195, "free_cash_flow": 155, "capital_expenditure": -40 },
+      { "report_period": "2022-09-30", "depreciation_and_amortization": 42, "net_cash_flow_from_operations": 200, "free_cash_flow": 160, "capital_expenditure": -40 },
+      { "report_period": "2022-12-31", "depreciation_and_amortization": 43, "net_cash_flow_from_operations": 205, "free_cash_flow": 165, "capital_expenditure": -40 },
+      { "report_period": "2023-03-31", "depreciation_and_amortization": 44, "net_cash_flow_from_operations": 210, "free_cash_flow": 170, "capital_expenditure": -40 },
+      { "report_period": "2023-06-30", "depreciation_and_amortization": 45, "net_cash_flow_from_operations": 215, "free_cash_flow": 175, "capital_expenditure": -40 },
+      { "report_period": "2023-09-30", "depreciation_and_amortization": 46, "net_cash_flow_from_operations": 220, "free_cash_flow": 180, "capital_expenditure": -40 },
+      { "report_period": "2023-12-31", "depreciation_and_amortization": 47, "net_cash_flow_from_operations": 225, "free_cash_flow": 185, "capital_expenditure": -40 }
+    ],
+    "estimates": [
+      { "report_period": "2023-09-30", "eps_estimate": 2.10, "revenue_estimate": 1140 },
+      { "report_period": "2023-12-31", "eps_estimate": 1.90, "revenue_estimate": 1180 }
+    ],
+    "ownership_history": [
+      { "report_period": "2023-06-30", "institutional_holders": 120, "institutional_shares": 600 },
+      { "report_period": "2023-09-30", "institutional_holders": 112, "institutional_shares": 575 },
+      { "report_period": "2023-12-31", "institutional_holders": 105, "institutional_shares": 560 }
+    ],
+    "insider_trades": [
+      { "transaction_date": "2023-11-15", "transaction_type": "buy", "transaction_value": 1500000 }
+    ],
+    "short_interest_pct": 0.12,
+    "docs": []
+  }
+}
