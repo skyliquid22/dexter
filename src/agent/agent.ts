@@ -8,6 +8,7 @@ import { extractTextContent, hasToolCalls } from '../utils/ai-message.js';
 import { InMemoryChatHistory } from '../utils/in-memory-chat-history.js';
 import { getToolDescription } from '../utils/tool-description.js';
 import { estimateTokens, TOKEN_BUDGET } from '../utils/tokens.js';
+import { logToFile } from '../utils/file-logger.js';
 import type { AgentConfig, AgentEvent, ToolStartEvent, ToolEndEvent, ToolErrorEvent, ToolLimitEvent } from '../agent/types.js';
 
 
@@ -231,7 +232,9 @@ export class Agent {
         blocked: false 
       };
     }
-
+    if (toolName === 'get_financial_screener') {
+      logToFile('screener', 'tool_call', { query, args: toolArgs });
+    }
     yield { type: 'tool_start', tool: toolName, args: toolArgs };
 
     const startTime = Date.now();
@@ -257,6 +260,10 @@ export class Agent {
       // Add complete tool result to scratchpad (single source of truth)
       scratchpad.addToolResult(toolName, toolArgs, result, llmSummary);
     } catch (error) {
+      if (toolName === 'get_financial_screener') {
+        const message = error instanceof Error ? error.message : String(error);
+        logToFile('screener', 'tool_error', { query, args: toolArgs, error: message });
+      }
       const errorMessage = error instanceof Error ? error.message : String(error);
       yield { type: 'tool_error', tool: toolName, error: errorMessage };
 
